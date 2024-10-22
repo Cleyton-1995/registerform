@@ -1,12 +1,17 @@
+import { Container, Typography } from "@mui/material";
 import "./App.css";
 import FormularioCadastro from "./Components/Formulario/FormularioCadastro";
 
+import "fontsource-roboto";
+
 function App() {
   return (
-    <>
-      <h1>Learn React</h1>;
+    <Container component="article" maxWidth="sm">
+      <Typography variant="h3" component="h1" align="center">
+        Formulário de Cadastro
+      </Typography>
       <FormularioCadastro />
-    </>
+    </Container>
   );
 }
 
