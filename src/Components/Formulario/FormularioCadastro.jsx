@@ -1,25 +1,24 @@
 import { Button, FormControlLabel, Switch, TextField } from "@mui/material";
 import React, { useState } from "react";
 
-export default function FormularioCadastro() {
+export default function FormularioCadastro({ aoEnviar }) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [promocoes, setPromocoes] = useState(true);
+  const [novidades, setNovidades] = useState(true);
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        console.log(nome, sobrenome);
+        aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
       }}
     >
       <TextField
         value={nome}
         onChange={(event) => {
-          let tmpnome = event.target.value;
-          if (tmpnome.length >= 3) {
-            tmpnome = tmpnome.substring(0, 3);
-          }
-          setNome(tmpnome);
+          setNome(event.target.value);
         }}
         id="nome"
         label="Nome"
@@ -39,6 +38,10 @@ export default function FormularioCadastro() {
         fullWidth
       />
       <TextField
+        value={cpf}
+        onChange={(event) => {
+          setCpf(event.target.value);
+        }}
         id="CPF"
         label="CPF"
         variant="outlined"
@@ -48,12 +51,30 @@ export default function FormularioCadastro() {
 
       <FormControlLabel
         label="Promoções"
-        control={<Switch name="promocoes" defaultChecked color="primary" />}
+        control={
+          <Switch
+            checked={promocoes}
+            onChange={(event) => {
+              setPromocoes(event.target.checked);
+            }}
+            name="promocoes"
+            color="primary"
+          />
+        }
       />
 
       <FormControlLabel
         label="Novidades"
-        control={<Switch name="novidades" defaultChecked color="primary" />}
+        control={
+          <Switch
+            checked={novidades}
+            onChange={(event) => {
+              setNovidades(event.target.checked);
+            }}
+            name="novidades"
+            color="primary"
+          />
+        }
       />
 
       <Button variant="contained" color="primary" type="submit">

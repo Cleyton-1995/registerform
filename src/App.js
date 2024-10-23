@@ -1,8 +1,11 @@
 import { Container, Typography } from "@mui/material";
 import "./App.css";
 import FormularioCadastro from "./Components/Formulario/FormularioCadastro";
-
 import "fontsource-roboto";
+
+function aoEnviarForm(dados) {
+  console.log(dados);
+}
 
 function App() {
   return (
@@ -10,7 +13,7 @@ function App() {
       <Typography variant="h3" component="h1" align="center">
         Formulário de Cadastro
       </Typography>
-      <FormularioCadastro />
+      <FormularioCadastro aoEnviar={aoEnviarForm} />
     </Container>
   );
 }
