@@ -18,7 +18,7 @@ function validarCPF(cpf) {
 function App() {
   return (
     <Container component="article" maxWidth="sm">
-      <Typography variant="h3" component="h1" align="center">
+      <Typography variant="h3" component="h1" align="center" marginBottom={5}>
         Formulário de Cadastro
       </Typography>
       <FormularioCadastro aoEnviar={aoEnviarForm} validarCPF={validarCPF} />
