@@ -8,12 +8,14 @@ export default function DadosEntrega() {
         id="CEP"
         label="CEP"
         type="number"
+        required
         variant="outlined"
         margin="normal"
       />
       <TextField
         id="endereco"
         label="Endereço"
+        required
         type="text"
         variant="outlined"
         margin="normal"
@@ -30,6 +32,7 @@ export default function DadosEntrega() {
         id="estado"
         label="Estado"
         type="text"
+        required
         variant="outlined"
         margin="normal"
       />
@@ -37,6 +40,7 @@ export default function DadosEntrega() {
         id="cidade"
         label="Cidade"
         type="text"
+        required
         variant="outlined"
         margin="normal"
       />

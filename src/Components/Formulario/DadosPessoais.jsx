@@ -23,6 +23,7 @@ export default function DadosPessoais({aoEnviar, validarCPF}) {
         }}
         id="nome"
         label="Nome"
+        required
         variant="outlined"
         margin="normal"
         fullWidth
@@ -34,6 +35,7 @@ export default function DadosPessoais({aoEnviar, validarCPF}) {
         }}
         id="sobrenome"
         label="Sobrenome"
+        required
         variant="outlined"
         margin="normal"
         fullWidth
@@ -51,6 +53,7 @@ export default function DadosPessoais({aoEnviar, validarCPF}) {
         helperText={erros.cpf.texto}
         id="CPF"
         label="CPF"
+        required
         variant="outlined"
         margin="normal"
         fullWidth
