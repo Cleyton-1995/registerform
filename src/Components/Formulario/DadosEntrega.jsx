@@ -22,6 +22,7 @@ export default function DadosEntrega({ aoEnviar }) {
         }}
         id="CEP"
         label="CEP"
+        name="CPF"
         type="number"
         required
         variant="outlined"
@@ -34,6 +35,7 @@ export default function DadosEntrega({ aoEnviar }) {
         }}
         id="endereco"
         label="Endereço"
+        name="endereco"
         required
         type="text"
         variant="outlined"
@@ -47,6 +49,7 @@ export default function DadosEntrega({ aoEnviar }) {
         }}
         id="numero"
         label="Número"
+        name="numero"
         type="number"
         variant="outlined"
         margin="normal"
@@ -58,6 +61,7 @@ export default function DadosEntrega({ aoEnviar }) {
         }}
         id="estado"
         label="Estado"
+        name="estado"
         type="text"
         required
         variant="outlined"
@@ -70,6 +74,7 @@ export default function DadosEntrega({ aoEnviar }) {
         }}
         id="cidade"
         label="Cidade"
+        name="cidade"
         type="text"
         required
         variant="outlined"
