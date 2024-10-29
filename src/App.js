@@ -5,10 +5,6 @@ import "fontsource-roboto";
 import { validarCPF, validarSenha } from "./models/cadastro";
 import ValidacoesCadastro from "./contexts/Validacoes";
 
-function aoEnviarForm(dados) {
-  console.log(dados);
-}
-
 function App() {
   return (
     <Container component="article" maxWidth="sm">
@@ -28,4 +24,7 @@ function App() {
   );
 }
 
+function aoEnviarForm(dados) {
+  console.log(dados);
+}
 export default App;

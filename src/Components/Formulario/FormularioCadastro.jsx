@@ -47,7 +47,7 @@ export default function FormularioCadastro({ aoEnviar }) {
           <StepLabel>Finalização</StepLabel>
         </Step>
       </Stepper>
-      {formularios[etapaAtual]}{" "}
+      {formularios[etapaAtual]}
     </>
   );
 }

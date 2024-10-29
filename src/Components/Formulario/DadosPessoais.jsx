@@ -1,6 +1,7 @@
 import { Button, FormControlLabel, Switch, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import ValidacoesCadastro from "../../contexts/Validacoes";
+import useErros from "../../hooks/useErros";
 
 export default function DadosPessoais({ aoEnviar }) {
   const [nome, setNome] = useState("");
@@ -8,34 +9,15 @@ export default function DadosPessoais({ aoEnviar }) {
   const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(true);
-  const [erros, setErros] = useState({
-    cpf: { valido: true, texto: "" },
-    nome: { valido: true, texto: "" },
-  });
-
   const validacoes = useContext(ValidacoesCadastro);
 
-  function validarCampos(event) {
-    const { name, value } = event.target;
-    const novoEstado = { ...erros };
-    novoEstado[name] = validacoes[name](value);
-    setErros(novoEstado);
-  }
-
-  function possoEnviar() {
-    for (let campo in erros) {
-      if (!erros[campo].valido) {
-        return false;
-      }
-    }
-    return true;
-  }
+  const [erros, validarCampos, possoEnviar] = useErros(validacoes);
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (possoEnviar) {
+        if (possoEnviar()) {
           aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
         }
       }}
@@ -64,7 +46,6 @@ export default function DadosPessoais({ aoEnviar }) {
         id="sobrenome"
         label="Sobrenome"
         name="Sobrenome"
-        required
         variant="outlined"
         margin="normal"
         fullWidth
